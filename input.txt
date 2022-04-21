@@ -1,0 +1,66 @@
+Console.WriteLine("請輸入姓名:");
+string name = Console.ReadLine();
+Console.WriteLine("請選擇性別(男生請輸入1/女生請輸入2):");
+string gender = Console.ReadLine();
+Console.WriteLine("請輸入出生年月日(民國):");
+string birth = Console.ReadLine();
+Console.WriteLine("請輸入學號:");
+string num = Console.ReadLine();
+string yes = "";
+do
+{
+    Console.WriteLine("姓名:" + name);
+    if(gender == "1")
+    {
+       Console.WriteLine("性別:男");
+    }
+    else if(gender == "2")
+    {
+        Console.WriteLine("性別:女");
+    }
+    else
+    {
+        Console.WriteLine("輸入錯誤");
+    }
+    Console.WriteLine("生日:" + birth);
+    Console.WriteLine("學號:" + num);
+    Console.WriteLine("資料正確請輸入1,錯誤請輸入2:");
+    yes = Console.ReadLine();
+    if(yes != "1"|| yes != "2" )
+    {
+        switch(yes)
+        {
+            case "1":
+                Console.WriteLine("資料輸入完成!");
+                break;
+            case "2":
+                Console.WriteLine("請問要更改哪個項目?(請輸入數字)");
+                Console.WriteLine("1.姓名 2.性別 3.出生年月日 4.學號");
+                string k = Console.ReadLine();
+                switch(k)
+                {
+                    case "1":
+                        Console.WriteLine("請輸入姓名:");
+                        name = Console.ReadLine();
+                        break;
+                    case "2":
+                        Console.WriteLine("請選擇性別(男生請輸入1/女生請輸入2):");
+                        gender = Console.ReadLine();
+                        break;
+                    case "3":
+                        Console.WriteLine("請輸入出生年月日");
+                        birth = Console.ReadLine();
+                        break;
+                    case "4":
+                        Console.WriteLine("請輸入學號:");
+                        num = Console.ReadLine();
+                        break;
+                }
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("輸入錯誤!");
+    }
+}while(yes != "1");
